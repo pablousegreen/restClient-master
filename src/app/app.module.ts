@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { ListuserComponent } from './components/listuser/listuser.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import{UserService}   from './shared-service/user.service';
+import { HotelsService } from './shared-service/hotels.service';
+import { ListhotelsComponent } from './components/listhotels/listhotels.component';
 const appRoutes:Routes=[
   {path:'', component:ListuserComponent},
     {path:'op', component:UserFormComponent}
@@ -16,7 +18,8 @@ const appRoutes:Routes=[
   declarations: [
     AppComponent,
     ListuserComponent,
-    UserFormComponent  
+    UserFormComponent,
+    ListhotelsComponent  
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,7 @@ const appRoutes:Routes=[
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [UserService],
+  providers: [UserService, HotelsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
