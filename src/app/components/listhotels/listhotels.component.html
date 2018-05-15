@@ -6,7 +6,16 @@
       <td>Price Per Night</td>
     </thead>
     <tbody>
-
+      <tr *ngFor="let hotel of hotels">
+        <td>
+          {{hotel.id}}
+        </td>
+        <td>{{hotel.name}}</td>
+        <td>{{hotel.pricePerNight}}</td>
+        <td><button class="btn btn-danger" (click)="deleteHotel(hotel)">Delete</button></td>
+        <td><button class="btn btn-primary" (click)="updateHotel(hotel)">Edit</button></td>
+      </tr>
     </tbody>
+    <button class="btn btn-primary" (click)="newHotel()">New Hotel</button>
   </table>
 </div>

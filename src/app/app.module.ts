@@ -3,15 +3,23 @@ import { NgModule } from '@angular/core';
 import{RouterModule, Routes}   from '@angular/router';
 import{HttpModule}   from '@angular/http';
 import{FormsModule}   from '@angular/forms';
+
+//COMPONENTS
 import { AppComponent } from './app.component';
 import { ListuserComponent } from './components/listuser/listuser.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
+import { ListhotelsComponent } from './components/listhotels/listhotels.component';
+
+//SERVICES
 import{UserService}   from './shared-service/user.service';
 import { HotelsService } from './shared-service/hotels.service';
-import { ListhotelsComponent } from './components/listhotels/listhotels.component';
+import { HotelFormComponent } from './components/hotel-form/hotel-form.component';
+
 const appRoutes:Routes=[
   {path:'', component:ListuserComponent},
-    {path:'op', component:UserFormComponent}
+    {path:'op', component:UserFormComponent},
+    {path:'ho', component:ListhotelsComponent},
+    {path:'hotelform', component:HotelFormComponent}
 ];
 
 @NgModule({
@@ -19,7 +27,8 @@ const appRoutes:Routes=[
     AppComponent,
     ListuserComponent,
     UserFormComponent,
-    ListhotelsComponent  
+    ListhotelsComponent,
+    HotelFormComponent  
   ],
   imports: [
     BrowserModule,

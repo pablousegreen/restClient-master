@@ -9,16 +9,15 @@ import {Router} from '@angular/router';
   styleUrls: ['./listhotels.component.css']
 })
 export class ListhotelsComponent implements OnInit {
-  private hotels : Hotel[];
-
-  constructor(private _hotelService: HotelsService, _router: Router) { }
+  private hotels:Hotel[];
+  constructor(private _hotelService: HotelsService, private _router: Router) { }
 
   ngOnInit() {
     this._hotelService.getHotels().subscribe((hotels)=>{
       console.log(hotels);
-      this.hotels = hotels;
+      this.hotels=hotels;
     },(error)=>{
-      console.log(this.hotels);
+      console.log(error);
     })
   }
 
@@ -27,8 +26,17 @@ export class ListhotelsComponent implements OnInit {
       this.hotels.slice(this.hotels.indexOf(hotel),1);
     }),(error)=>{
       console.log(this.hotels);
-      }
     }
+  }
 
+  updateHotel(hotel:Hotel){
+    this._hotelService.setHotel(hotel);
+    this._router.navigate(['/hotelform']);
+  }
 
+  newHotel(){
+    let hotel= new Hotel();
+    this._hotelService.createhotel(hotel);
+    this._router.navigate(['/hotelform']);
+  }
 }
