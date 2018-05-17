@@ -15,25 +15,25 @@ export class HotelFormComponent implements OnInit {
   constructor(private _hotelService: HotelsService, private _router: Router) { }
 
   ngOnInit() {
-    this.hotel = this._hotelService.getHotel();
+    this.hotel = this._hotelService.get();
   }
 
   processForm(){
-		if(this.hotel.id ==undefined){
-			this._hotelService.createhotel(this.hotel).subscribe((hotel)=>{
-				console.log(hotel);
-				this._router.navigate(['/ho']);
-			},(error)=>{
-				console.log(error);
-			});
-		}else{
-			this._hotelService.updateHotel(this.hotel).subscribe((hotel)=>{
-				console.log(hotel);
-				this._router.navigate(['/ho']);
-			},(error)=>{
-				console.log(error);
-			});
-		}
-	}
+    if(this.hotel.id==undefined){
+       this._hotelService.createhotel(this.hotel).subscribe((hotel)=>{
+         console.log(hotel);
+         this._router.navigate(['/ho']);
+       },(error)=>{
+         console.log(error);
+       });
+    }else{
+       this._hotelService.updateHotel(this.hotel).subscribe((hotel)=>{
+         console.log(hotel);
+         this._router.navigate(['/ho']);
+       },(error)=>{
+         console.log(error);
+       });
+    }
+  }
 
 }

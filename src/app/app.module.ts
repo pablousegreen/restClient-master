@@ -16,10 +16,10 @@ import { HotelsService } from './shared-service/hotels.service';
 import { HotelFormComponent } from './components/hotel-form/hotel-form.component';
 
 const appRoutes:Routes=[
-  {path:'', component:ListuserComponent},
+    {path:'', component:ListuserComponent},
     {path:'op', component:UserFormComponent},
     {path:'ho', component:ListhotelsComponent},
-    {path:'hotelform', component:HotelFormComponent}
+    {path:'hoform', component:HotelFormComponent}
 ];
 
 @NgModule({

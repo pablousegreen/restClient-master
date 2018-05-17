@@ -19,8 +19,14 @@ export class HotelsService {
       .catch(this.erro_handler);
   }
 
+  getHotel(id:Number){
+
+    return this._http.get(this.baseUrl+id,this.options).map((response:Response)=>response.json())
+      .catch(this.erro_handler);
+  }
+
   deleteHotel(id: Number){
-    return this._http.delete(this.baseUrl+'deleteHotel/'+id,this.options).map((response:Response)=>response.json())
+    return this._http.delete(this.baseUrl+'delete/'+id,this.options).map((response:Response)=>response.json())
     .catch(this.erro_handler);
   }
 
@@ -39,11 +45,11 @@ export class HotelsService {
     return Observable.throw(error||"SERVER ERROR");
  }
 
- setHotel(hotel: Hotel){
+ set(hotel: Hotel){
    this.hotel = hotel
  }
 
- getHotel(){
+ get(){
    return this.hotel;
  }
 

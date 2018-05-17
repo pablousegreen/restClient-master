@@ -30,13 +30,13 @@ export class ListhotelsComponent implements OnInit {
   }
 
   updateHotel(hotel:Hotel){
-    this._hotelService.setHotel(hotel);
-    this._router.navigate(['/hotelform']);
+    this._hotelService.set(hotel);
+    this._router.navigate(['/hoform']);
   }
 
   newHotel(){
     let hotel= new Hotel();
     this._hotelService.createhotel(hotel);
-    this._router.navigate(['/hotelform']);
+    this._router.navigate(['/hoform']);
   }
 }
