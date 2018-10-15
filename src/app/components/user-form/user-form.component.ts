@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import{User}  from '../../models/user';
-import{Router}  from '@angular/router';
-import{UserService}  from '../../shared-service/user.service';
+import {User} from '../../models/user';
+import {Router} from '@angular/router';
+import {UserService} from '../../shared-service/user.service';
 
 @Component({
   selector: 'app-user-form',

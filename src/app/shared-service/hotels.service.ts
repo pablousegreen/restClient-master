@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import{Http, Response, Headers, RequestOptions} from '@angular/http';
-import{Observable}   from 'rxjs/Observable';
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
+import {Observable}   from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-import{Hotel}  from '../models/hotel';
+import {Hotel} from '../models/hotel';
 
 @Injectable()
 export class HotelsService {
